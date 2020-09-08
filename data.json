@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "competitor": "Natalia Bello",
+    "category": { "id": 1, "label": "Damas" },
+    "track": {
+      "id": 1,
+      "distance": 1000,
+      "name": "Simiyork track",
+      "place": { "id": 1, "coordinates": "10, 344", "name": "Simajaca" }
+    }
+  },
+  {
+    "id": 2,
+    "competitor": "Yineth Casribkanco",
+    "category": { "id": 1, "label": "Damas" },
+    "track": {
+      "id": 1,
+      "distance": 1000,
+      "name": "Simiyork track",
+      "place": { "id": 1, "coordinates": "10, 344", "name": "Simajaca" }
+    }
+  },
+  {
+    "id": 3,
+    "competitor": "Yeimy Angel",
+    "category": { "id": 1, "label": "Damas" },
+    "track": {
+      "id": 1,
+      "distance": 1000,
+      "name": "Simiyork track",
+      "place": { "id": 1, "coordinates": "10, 344", "name": "Simajaca" }
+    }
+  },
+  {
+    "id": 3,
+    "competitor": "Andres Castellanos",
+    "category": { "id": 2, "label": "Caballeros" },
+    "track": {
+      "id": 1,
+      "distance": 1000,
+      "name": "Simiyork track",
+      "place": { "id": 1, "coordinates": "10, 344", "name": "Simajaca" }
+    }
+  }
+]
