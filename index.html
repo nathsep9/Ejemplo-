@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeSport</title>
+    <style>
+      #app {
+        font-size: 20px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="bg-dark">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            >Disabled</a
+          >
+        </li>
+      </ul>
+    </header>
+    <div class="container mt-4">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Competitor</th>
+            <th scope="col">Track</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody id="trainings">
+          <tr>
+            <td>
+              <div id="app">Cargando</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      fetch(`./data.json`).then(async res => {
+        const trainings = await res.json();
+
+        let table = '';
+        for (const training of trainings) {
+          const id = training.id;
+          const competitor = training.competitor;
+          const track = training.track;
+          const category = training.category;
+          table += `<tr>
+            <th scope="row">${id}</th>
+            <td>${competitor}</td>
+            <td>${track.name}</td>
+            <td>${category.label}</td>
+          </tr>`;
+        }
+        document.getElementById('trainings').innerHTML = table;
+      });
+    </script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
